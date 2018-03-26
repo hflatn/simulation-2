@@ -1,0 +1,222 @@
+.dash-body {
+    width: 50vw;
+    min-height: 900px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #e2f3ea, #ffffff);
+}
+
+.add-cancel-container {
+    width: 45vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px; 
+}
+
+.add-list-text {
+    
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.cancel-list-button { 
+    font-size: 16px;
+    background-color: #fec2c2;
+    cursor: pointer;
+    border: none;
+}
+
+.step-container-title {
+    width: 70%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.font20 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.step-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-next {
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 3px;
+    border: 1px solid #3b5249;
+    background-color: #3b5249;
+    cursor: pointer;
+    margin-top: 35px;
+}
+
+.step-container {
+    margin-top: 20px;
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.label-info {
+    font-size: 20px;
+    font-weight: 700;
+    width: 70%;
+    margin: 20px 0px 3px 30px;
+
+}
+
+/* Step 1 Specific Below */
+
+.step-1-label-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.step-1-input {
+    border-radius: 2px;
+    font-size: 15px;
+    width: 70%;
+    font-weight: 400;
+    border: 1px solid #519872;
+    outline: none;
+}
+
+.step-1-input:nth-child(4) {
+    height: 100px;
+}
+
+
+/* Step 2 Specific Below */
+
+.step-2-label-container {
+    width: 100%;
+    height:500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.step-2-cs-container {
+    width: 70%;
+    margin-top: 20px;
+    display: flex;
+
+}
+
+.step-2-csz-container {
+    border-radius: 2px;
+    font-size: 15px;
+    width: 70%;
+    font-weight: 400;
+    border: 1px solid #519872;
+    outline: none;
+}
+
+.step-2-c-s-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.step-2-z-container {
+    width: 70%;
+    display: block;
+}
+
+
+
+/* Step 3 Specific Below */
+
+.step-3-image-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0,0,0,.2);
+    background-color: #dedede;
+    margin: 30px;
+    border: 1px solid #519872;
+}
+
+.step-3-img {
+    max-width: 100%;
+    max-height: 100%;
+    font-weight: 700;
+}
+
+.step-3-url-title {
+    width: 100%;
+    font-size: 20px;
+    display: block;
+    font-weight: 700;
+    margin-left: 15px;
+}
+
+.step-3-url {
+    width: 100%;
+    border-radius: 2px;
+    display:block;
+    border: 1px solid #519872;
+    outline: none;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+/* Step 4 Specific Below */ 
+
+.step-4-label-container {
+    width: 90%;
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.step-4-url {
+    width: 100%;
+    border-radius: 2px;
+    display:block;
+    border: 1px solid #519872;
+    outline: none;
+    font-weight: 300;
+    font-size: 20px; 
+}
+
+/* Step 5 Specific Below */ 
+
+.step-5-complete{
+
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    color: #000;
+    background-color: #8aea92;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 10px 30px;
+    border-radius: 3px;
+    border: none;
+    margin-top: 35px;
+}
+
+.step-5-rec-rent {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 25px;
+}

@@ -1,0 +1,27 @@
+.whole-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #AFD4C0;
+
+}
+.top-bar {
+
+    background-color: #519872;
+    position: absolute;
+    width: 100vw;
+    top: 0px;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dash-title {
+    color: #fff;
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: 700;
+}

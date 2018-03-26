@@ -1,0 +1,64 @@
+.lin {
+    background-color: white;
+    width: 50vw;
+    height: 100vh;
+    min-height: 850px;
+    min-width: 850px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sideslogin {
+    background-color: #AFD4C0;
+   height: 100vh;
+   width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.auth-text {
+    font-size: 20px;
+    margin-bottom: 3px;
+    position: relative;
+    left: -27%;
+    font-weight: 700;
+}
+
+.auth-input {
+    cursor: text;
+    font-size: 25px;
+    width: 70%;
+    margin-bottom: 25px;
+    border: 1px solid #519872;
+    outline: none;
+}
+
+.logo {
+    margin-bottom: 50px;
+}
+
+.auth-login {
+    border: none;
+    width: 130px;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #8aea92;
+    margin-right: 35px;
+}
+
+.auth-register {
+    border: none;
+    width: 130px;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #3b5249;
+    color: #fff;
+}
+
+.button-container {
+    display: block;
+}

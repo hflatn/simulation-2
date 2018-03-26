@@ -1,0 +1,72 @@
+.whole-page {
+    width: 100vw;
+    height: 122.3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #AFD4C0;
+}
+
+.dash-body {
+    width: 50vw;
+    min-height: 900px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #e2f3ea, #ffffff);
+}
+
+.filter-container {
+    width: 45vw;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 30px;
+    margin-top: px;
+
+}
+
+.add-prop {
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: #8aea92;
+    width: 225px;
+    height:50px;
+    margin-top: 100px;
+}
+
+.list-text {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+.logout-button {
+    color: #fff;
+    cursor: pointer;
+    margin-left: 350px;
+    font-weight: 700;
+}
+
+.filter-input {
+    width: 85px;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.listing-title {
+    width: 40vw;
+    height:auto;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px 20px 20px 20px;
+
+}
