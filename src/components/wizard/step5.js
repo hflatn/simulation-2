@@ -5,6 +5,7 @@ import wiz from './wiz.css';
 import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
+import { Link } from 'react-router-dom';
 
 export default class step5 extends Component {
     constructor() {
@@ -26,7 +27,7 @@ export default class step5 extends Component {
             <div className ="whole-page">
             <Header/>
             
-            <div className = "dash-body">
+            <div className = "home-body">
 
                 <div className = "add-cancel-container">
                     <span className = "add-list-text"> Add new listing </span>
@@ -57,8 +58,8 @@ export default class step5 extends Component {
 
 
                             <div className = "step-container">
-                                <button className = "button-next"> Previous Step </button>
-                                <button className = "step-5-complete"> Complete </button>
+                            <Link to="/dashboard/4">  <button className = "button-next"> Previous Step </button> </Link>
+                            <Link to="/dashboard">    <button className = "step-5-complete"> Complete </button> </Link>
                             </div>
                 </div>
             

@@ -1,4 +1,4 @@
-create table username (
+create table userbase (
 id serial primary key,
 username varchar(40),
 password varchar(40)

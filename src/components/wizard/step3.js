@@ -6,6 +6,7 @@ import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
 import header_logo from '../../assets/header_logo.png';
+import { Link } from 'react-router-dom';
 
 export default class step3 extends Component {
     constructor() {
@@ -27,7 +28,7 @@ export default class step3 extends Component {
             <div className ="whole-page">
             <Header/>
             
-            <div className = "dash-body">
+            <div className = "home-body">
 
                 <div className = "add-cancel-container">
                     <span className = "add-list-text"> Add new listing </span>
@@ -53,8 +54,8 @@ export default class step3 extends Component {
                                 <input className = "step-3-url"/>
                             
                             <div className = "step-container">
-                                <button className = "button-next"> Previous Step </button>
-                                <button className = "button-next"> Next Step </button>
+                            <Link to="/dashboard/2">  <button className = "button-next"> Previous Step </button> </Link>
+                            <Link to="/dashboard/4">  <button className = "button-next"> Next Step </button> </Link>
                             </div>
                 </div>
             

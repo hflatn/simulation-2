@@ -5,28 +5,26 @@ import wiz from './wiz.css';
 import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
+import { Link } from 'react-router-dom';
 
 export default class step2 extends Component {
-    constructor() {
-        super();
-        this.state = {
-
-        }
-    }
-
-
+ 
+componentDidMount(){
+    console.log(this.props.propertyname, "propertyname props")
+}
 
 
     render(){
 
-    
+        const { propertyname, propertydescription} = this.props;
+        
 
 
         return(
             <div className ="whole-page">
                 <Header/>
                 
-                <div className = "dash-body">
+                <div className = "home-body">
 
                     <div className = "add-cancel-container">
                         <span className = "add-list-text"> Add new listing </span>
@@ -73,8 +71,8 @@ export default class step2 extends Component {
                                 
                                 <div className = "step-container">
 
-                                    <button className = "button-next"> Previous Step </button>
-                                    <button className = "button-next"> Next Step </button>
+                                  <Link to="/dashboard/1">  <button className = "button-next"> Previous Step </button> </Link>
+                                  <Link to="/dashboard/3">  <button className = "button-next"> Next Step </button> </Link>
 
                                 </div>
 

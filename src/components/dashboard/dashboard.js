@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import body from './body.css';
 import  Header  from '../header/Header.js';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default class dash extends Component {
     constructor() {
@@ -11,27 +13,29 @@ export default class dash extends Component {
         }
     }
 
-
+    componentDidMount () {
+        console.log("componentdidmount")
+        axios.get('/api/getsession').then ( res => {
+            console.log(res.data, "session information")
+        })
+    }
 
 
     render(){
 
-    
-
-
         return(
             <div className="whole-page">
             
-                
                 <Header />
               
-              
-                <div className="dash-body">
-                    <button className="add-prop"> Add new property </button> 
+                <div className="home-body">
+                  <Link to="/dashboard/1">  <button className="add-prop"> Add new property </button> </Link>
 
                     <div className="filter-container">
                          <span className="list-text"> List properties with "desired rent" greater than: $ </span>
-                         <input />
+                         <input className="filter-input"/>
+                         <button className="filter-button"> Filter </button>
+                         <button className="reset-button"> Reset </button>
                      </div>
                     
                     <div className="listing-title"> 
@@ -44,3 +48,4 @@ export default class dash extends Component {
         )
     }
 }
+

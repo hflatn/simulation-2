@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import top from './top.css';
 import header_logo from '../../assets/header_logo.png'
+import axios from 'axios';
+import { Link }from 'react-router-dom';
 
 export default class Header extends Component {
     constructor() {
@@ -13,10 +15,14 @@ export default class Header extends Component {
 
 
 
+    
+        logout(){
+        axios.get('/api/signout').then (res => {
+        
+        })
+        }
 
     render(){
-
-    
 
 
         return(
@@ -25,11 +31,9 @@ export default class Header extends Component {
                 <div className="top-bar">
                     <img src={ header_logo } />
                     <span className = "dash-title"> Houser Dashboard </span>
-                    <span className = "logout-button"> Logout </span>
+                 <Link to="/">   <span className = "logout-button" onClick={() => this.logout()}> Logout </span> </Link>
                 </div>
 
-
-          
         )
     }
 }

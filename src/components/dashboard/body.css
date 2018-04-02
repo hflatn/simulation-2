@@ -7,10 +7,10 @@
     background-color: #AFD4C0;
 }
 
-.dash-body {
+.home-body {
     width: 50vw;
     min-height: 900px;
-    height: 100vh;
+    height: 147vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,14 +18,14 @@
 }
 
 .filter-container {
-    width: 45vw;
+    width: 50vw;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #000;
     padding-bottom: 30px;
-    margin-top: px;
+    margin-top: 10px;
 
 }
 
@@ -60,6 +60,8 @@
     border-radius: 3px;
     margin-left: 5px;
     margin-right: 20px;
+    border: 1px solid #519872;
+    outline: none;
 }
 
 .listing-title {
@@ -69,4 +71,30 @@
     font-size: 20px;
     padding: 20px 20px 20px 20px;
 
+}
+
+.filter-button {
+    border: none;
+    padding: 7px;
+    width: 70px;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 18px;
+    background-color: #8aea92;
+}
+
+.reset-button {
+    border: none;
+    padding: 7px;
+    width: 70px;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 18px;
+    background-color:  #3b5249;
+    margin-left: 10px;
+    color: white;
+}
+
+a:link {
+ text-decoration: none;
 }

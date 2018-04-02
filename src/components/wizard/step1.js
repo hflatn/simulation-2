@@ -4,17 +4,35 @@ import  Header  from '../header/Header.js';
 import wiz from './wiz.css';
 import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { propname, propdescription } from '../.././reducer.js';
 
-export default class step1 extends Component {
-    constructor() {
-        super();
-        this.state = {
-
-        }
+class step1 extends Component {
+   
+submit(){
+    let body = {
+        propertyname: this.state.propertyname,
+        propertydescription: this.state.propertydescription
     }
+        console.log( this.props.propertydescription, "property description props")
+        console.log( this.props.propertyname, "property name props")
+   
+}
 
+handlename(e){
+    let input = e.target.value
+    this.setState({
+        propertyname: input
+    })
+}
 
-
+handledescription(e){
+    let input = e.target.value
+    this.setState({
+        propertydescription: input
+    })
+}
 
     render(){
 
@@ -25,7 +43,7 @@ export default class step1 extends Component {
             <div className ="whole-page">
             <Header/>
                 
-                <div className = "dash-body">
+                <div className = "home-body">
 
                     <div className = "add-cancel-container">
                         <span className = "add-list-text"> Add new listing </span>
@@ -47,10 +65,10 @@ export default class step1 extends Component {
 
                     <div className = "step-1-label-container">
                         <span className = "label-info"> Property Name </span>
-                        <input className = "step-1-input"/>
+                        <input className = "step-1-input" onChange={(e) => this.handlename(e)}/>
                         <span className = "label-info"> Property Description </span> 
-                        <textarea className = "step-1-input"/>
-                        <button className="button-next"> Next Step</button>
+                        <textarea className = "step-1-input" onChange={(e) => this.handledescription(e) }/>
+                       <Link to="/dashboard/2"> <button className="button-next" onClick={() => this.submit()}> Next Step</button> </Link>
                     </div>
 
                 </div>
@@ -59,3 +77,9 @@ export default class step1 extends Component {
         )
     }
 }
+
+function mapStateToProps( state ) {
+    return state;
+}
+
+export default connect( mapStateToProps, {propname,} ) (step1);

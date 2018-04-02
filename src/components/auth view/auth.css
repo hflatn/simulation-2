@@ -62,3 +62,10 @@
 .button-container {
     display: block;
 }
+
+.wrong {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+    color: maroon;
+}

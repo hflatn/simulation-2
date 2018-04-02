@@ -1,2 +1,2 @@
-INSERT INTO username (username, password)
+INSERT INTO userbase (username, password)
 Values($1, $2)
