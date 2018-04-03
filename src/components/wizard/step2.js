@@ -6,17 +6,19 @@ import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
+import { nameupdate, descriptionupdate } from '../.././reducer.js';
 
-export default class step2 extends Component {
+ class step2 extends Component {
  
 componentDidMount(){
-    console.log(this.props.propertyname, "propertyname props")
+    console.log(this.props.nameupdatestring, this.props.descriptionupdatestring, "nameupate props")
+    console.log(this.props, "this.props value")
 }
 
 
     render(){
 
-        const { propertyname, propertydescription} = this.props;
+        const { nameupdate, propertydescription} = this.props;
         
 
 
@@ -86,3 +88,11 @@ componentDidMount(){
         )
     }
 }
+
+function mapStateToProps( state ) {
+
+return state
+
+}
+
+export default connect( mapStateToProps, {nameupdate, descriptionupdate} ) (step2);

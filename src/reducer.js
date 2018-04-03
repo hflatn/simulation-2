@@ -2,18 +2,21 @@ const initialState = {
 
     username: '',
     password: '',
-    wrong: ''
-
+    wrong: '',
+    nameupdatestring: '',
+    descriptionupdatestring: ''
     
     
 };
+
 const LOGIN = "LOGIN";
 const PASSWORD = "PASSWORD"
 const WRONG = "WRONG"
-const PROPERTYNAME = "PROPERTYNAME"
-const PROPERTYDESCRIPTION = "PROPERTYDESCRIPTION"
+const NAMEUPDATE = "NAMEUPDATE"
+const DESCRIPTIONUPDATE = "DESCRIPTIONUPDATE"
 
 export default function manager( state = initialState, action) {
+    let { payload } = action;
     switch(action.type) {
         case LOGIN:
             return {username: state.username}
@@ -24,11 +27,13 @@ export default function manager( state = initialState, action) {
         case WRONG:
             return {wrong: state.wrong}
 
-        case PROPERTYNAME:
-            return {propertyname: state.propertyname}
+        case NAMEUPDATE:
+            return Object.assign({}, state, {
+                nameupdatestring: action.payload })
 
-        case PROPERTYDESCRIPTION:
-            return {propdescription: state. propdescription}
+        case DESCRIPTIONUPDATE:
+        return Object.assign({}, state, {
+            descriptionupdatestring: action.payload })
     }
 }
 
@@ -45,11 +50,17 @@ export function updatewrong() {
     return {type: WRONG }
 }
 
-export function propname() {
-    return {type: PROPERTYNAME}
+export function nameupdate(propertyname) {
+    return {
+        type: NAMEUPDATE,
+        payload: propertyname
+        
+    }
 }
 
-export function propdescription() {
-    return {type: PROPERTYDESCRIPTION}
+export function descriptionupdate(propertydescription) {
+    return {type: DESCRIPTIONUPDATE,
+        payload: propertydescription
+    }
 }
 
