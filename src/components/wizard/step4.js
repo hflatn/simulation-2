@@ -6,21 +6,14 @@ import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
+import { loanamount, monthlymortgage } from '../.././reducer.js';
 
-export default class step4 extends Component {
-    constructor() {
-        super();
-        this.state = {
-
-        }
-    }
-
-
-
+ class step4 extends Component {
 
     render(){
 
-    
+        const { loanamount, monthlymortgage,
+                loanAmountString, monthlyMortgageString } = this.props
 
 
         return(
@@ -46,10 +39,10 @@ export default class step4 extends Component {
                         </div>
 
                         <span className="step-4-label-container"> Loan Amount </span>
-                        <input className="step-4-url" />
+                        <input className="step-4-url" onChange = {(e) => loanamount(e.target.value)} value={loanAmountString}/>
 
                         <span className="step-4-label-container"> Monthly Mortgage </span>
-                        <input className="step-4-url" />
+                        <input className="step-4-url" onChange = {(e) => monthlymortgage(e.target.value)} value={monthlyMortgageString}/>
 
                         </div>
 
@@ -71,3 +64,13 @@ export default class step4 extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    if (!state) return {};
+    const { loanAmountString, monthlyMortgageString } = state
+    return {
+        loanAmountString, monthlyMortgageString
+    }
+}
+
+export default connect(mapStateToProps, { loanamount, monthlymortgage})(step4);

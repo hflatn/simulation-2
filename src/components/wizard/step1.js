@@ -9,37 +9,10 @@ import axios from 'axios';
 import { nameupdate, descriptionupdate } from '../.././reducer.js';
 
 class step1 extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            propertyname: '',
-            propertydescription: '',
-        }
-        this.handlename = this.handlename.bind(this);
-        this.handledescription = this.handledescription.bind(this)
-    }
+  
 
-    componentDidMount() {
-        this.setState({
-            propertyname: this.props.nameupdate,
-            propdescription: this.props.descriptionupdate
-        })
-    }
+    
 
-
-    handlename(e) {
-        let input = e.target.value
-        this.setState({
-            propertyname: input
-        })
-    }
-
-    handledescription(e) {
-        let input = e.target.value
-        this.setState({
-            propertydescription: input
-        })
-    }
 
     render() {
 
@@ -96,4 +69,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { nameupdate, descriptionupdate })(step1);
+export default connect(mapStateToProps, { nameupdate, descriptionupdate, })(step1);

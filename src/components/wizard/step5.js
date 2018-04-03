@@ -6,22 +6,13 @@ import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
+import { desiredrent } from '../.././reducer.js';
 
-export default class step5 extends Component {
-    constructor() {
-        super();
-        this.state = {
-
-        }
-    }
-
-
-
-
+class step5 extends Component {
+   
     render(){
 
-    
-
+    const { desiredrent, desiredRentString } = this.props
 
         return(
             <div className ="whole-page">
@@ -48,7 +39,7 @@ export default class step5 extends Component {
                         <span className="step-5-rec-rent"> Recommended Rent $ </span>
 
                         <span className="step-4-label-container"> Desired Rent </span>
-                        <input className="step-4-url" />
+                        <input className="step-4-url" onChange = {(e) => desiredrent(e.target.value)} value = {desiredRentString} />
 
                     
 
@@ -65,10 +56,16 @@ export default class step5 extends Component {
             
             </div>
 
-        
-
-
-
         )
     }
 }
+
+function mapStateToProps(state) {
+    if (!state) return {};
+    const { desiredRentString } = state;
+    return {
+        desiredRentString
+    }
+}
+
+export default connect(mapStateToProps, { desiredrent })(step5);

@@ -6,19 +6,21 @@ import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
-import { nameupdate, descriptionupdate } from '../.././reducer.js';
+import { addressupdate, cityupdate, stateupdate, zipupdate } from '../.././reducer.js';
+
 
  class step2 extends Component {
  
 componentDidMount(){
-    console.log(this.props.nameupdatestring, this.props.descriptionupdatestring, "nameupate props")
+    
     console.log(this.props, "this.props value")
 }
 
 
     render(){
 
-        const { nameupdate, propertydescription} = this.props;
+        const {addressupdate, cityupdate, stateupdate, zipupdate,
+             addressString, cityString, stateString, zipString} = this.props;
         
 
 
@@ -46,18 +48,18 @@ componentDidMount(){
 
                             <div className = "step-2-label-container">
                                 <span className = "label-info"> Address </span>
-                                <input className = "step-1-input"/>
+                                <input className = "step-1-input" onChange={(e) => addressupdate(e.target.value)} value = {addressString}/>
 
                                 <div className = "step-2-cs-container">
                                     
                                     <div className = "step-2-c-s-container">
                                         <span className = "label-info"> City </span>
-                                        <input className = "step-2-csz-container"/>
+                                        <input className = "step-2-csz-container" onChange = {(e) => cityupdate(e.target.value)} value = {cityString}/>
                                     </div>
 
                                     <div className = "step-2-c-s-container">
-                                        <span className = "label-info"> Zip </span>
-                                        <input className = "step-2-csz-container"/>
+                                        <span className = "label-info"> State </span>
+                                        <input className = "step-2-csz-container" onChange = {(e) => stateupdate(e.target.value)} value = {stateString}/>
                                     </div>
 
                                 </div>
@@ -66,7 +68,7 @@ componentDidMount(){
 
                                     <div className = "step-2-c-s-container">
                                         <span className = "label-info"> Zip </span>
-                                        <input className = "step-2-csz-container"/>
+                                        <input className = "step-2-csz-container" onChange = {(e) => zipupdate(e.target.value)} value = {zipString}/>
                                     </div>
                                     
                                 </div> 
@@ -90,9 +92,12 @@ componentDidMount(){
 }
 
 function mapStateToProps( state ) {
-
-return state
-
+if (!state )
+return { }
+const { addressString, cityString, stateString, zipString } = state;
+return { addressString, cityString, stateString, zipString
+}
 }
 
-export default connect( mapStateToProps, {nameupdate, descriptionupdate} ) (step2);
+export default connect( mapStateToProps, { addressupdate, cityupdate, stateupdate, zipupdate } ) (step2);
+
