@@ -10,7 +10,7 @@ import { addressupdate, cityupdate, stateupdate, zipupdate } from '../.././reduc
 
 
  class step2 extends Component {
- 
+
 componentDidMount(){
     
     console.log(this.props, "this.props value")
@@ -48,7 +48,7 @@ componentDidMount(){
 
                             <div className = "step-2-label-container">
                                 <span className = "label-info"> Address </span>
-                                <input className = "step-1-input" onChange={(e) => addressupdate(e.target.value)} value = {addressString}/>
+                                <input className = "step-1-input" onChange= {(e) => addressupdate(e.target.value)} value = {addressString}/>
 
                                 <div className = "step-2-cs-container">
                                     

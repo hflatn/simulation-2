@@ -58,6 +58,19 @@ module.exports = {
         console.log(session.user, "session res")
     },
 
+    createListing: (req, res, next) => {
+        const dbInstance = req.app.get('db');
+        const { nameupdatestring, descriptionupdatestring, addressString, cityString, stateString, 
+            zipString, imgUrl, loanAmountString, monthlyMortgageString, desiredRentString} = req.body
+            console.log(req.session.user.id, "create listing session information")
+
+        dbInstance.create_listing([ req.session.user.id, nameupdatestring, descriptionupdatestring, addressString,  cityString, stateString, 
+            zipString, imgUrl, loanAmountString, monthlyMortgageString, desiredRentString ])
+            .then( () => res.status(200).send() )
+            .catch( (err) => {(console.log(err, "createlisting error"))
+
+            res.status(500).send() } )
+    }
  
 }
 

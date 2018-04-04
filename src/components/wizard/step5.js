@@ -6,13 +6,38 @@ import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
-import { desiredrent } from '../.././reducer.js';
+import axios from 'axios';
+import { desiredrent} from '../.././reducer.js';
 
 class step5 extends Component {
-   
+   constructor(props){
+       super(props)
+       this.createListing = this.createListing.bind(this);
+   }
+
+
+componentDidMount(){
+   console.log(this.props, "propsinfo")
+
+}
+
+createListing(){
+    const { desiredRentString, nameupdatestring, descriptionupdatestring, addressString, cityString, stateString,
+        zipString, imgUrl, loanAmountString, monthlyMortgageString} = this.props
+
+    let body = { nameupdatestring, descriptionupdatestring,  cityString, stateString, 
+    zipString, imgUrl, loanAmountString, monthlyMortgageString, desiredRentString }
+    axios.post('/api/createListing', body).then ( res => {
+    
+    })
+}
+//description string, citystring,imgurl,loandamountstrig
+
+
     render(){
 
-    const { desiredrent, desiredRentString } = this.props
+        const { desiredrent, desiredRentString, nameupdatestring, descriptionupdatestring, addressString, cityString, stateString,
+            zipString, imgUrl, loanAmountString, monthlyMortgageString} = this.props
 
         return(
             <div className ="whole-page">
@@ -50,7 +75,7 @@ class step5 extends Component {
 
                             <div className = "step-container">
                             <Link to="/dashboard/4">  <button className = "button-next"> Previous Step </button> </Link>
-                            <Link to="/dashboard">    <button className = "step-5-complete"> Complete </button> </Link>
+                            <Link to="/dashboard">    <button className = "step-5-complete" onClick={() => this.createListing()}> Complete </button> </Link>
                             </div>
                 </div>
             
@@ -62,9 +87,11 @@ class step5 extends Component {
 
 function mapStateToProps(state) {
     if (!state) return {};
-    const { desiredRentString } = state;
+    const { nameupdatestring, descriptionupdatestring, addressString, cityString, stateString, 
+        zipString, imgUrl, loanAmountString, monthlyMortgageString, desiredRentString } = state;
     return {
-        desiredRentString
+        nameupdatestring, descriptionupdatestring, addressString, cityString, stateString, 
+    zipString, imgUrl, loanAmountString, monthlyMortgageString, desiredRentString
     }
 }
 

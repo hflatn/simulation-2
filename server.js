@@ -32,6 +32,7 @@ app.get('/api/signout', controller.signout);
 app.post('/api/loginuser', controller.login);
 app.post('/api/registeruser', controller.register);
 app.post('api/signout', controller.signout)
+app.post('/api/createListing', controller.createListing);
 
 const port = process.env.PORT || 3333
 app.listen( port, () => { console.log("Server Working")})

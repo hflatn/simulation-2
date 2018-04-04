@@ -10,7 +10,14 @@ import { Link } from 'react-router-dom';
 import { img } from '../.././reducer.js';
 
 class step3 extends Component {
-
+    constructor(props){
+        super(props)
+     
+    }
+    componentDidMount(){
+    
+        console.log(this.props, "this.props value")
+    }
 
     render() {
 
@@ -75,9 +82,9 @@ class step3 extends Component {
 function mapStateToProps(state) {
     if (!state)
         return {}
-    const { imgUrl } = state;
+    const { imgUrl, addressString, cityString, stateString, zipString } = state;
     return {
-        imgUrl
+        imgUrl, addressString, cityString, stateString, zipString
     }
 }
 

@@ -16,7 +16,7 @@ const initialState = {
     loanAmountString: '',
     monthlyMortgageString: '',
 
-    desiredRentString: ''
+    desiredRentString: null
 };
 
 const LOGIN = "LOGIN";
@@ -36,6 +36,8 @@ const LOANAMOUNT = "LOANAMOUNT"
 const MONTHLYMORTGAGE = "MONTHLYMORTGAGE"
 
 const DESIREDRENT = "DESIREDRENT"
+
+
 
 export default function manager(state = initialState, action) {
     let { payload } = action;

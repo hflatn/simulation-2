@@ -17,6 +17,7 @@ export default class dash extends Component {
         console.log("componentdidmount")
         axios.get('/api/getsession').then ( res => {
             console.log(res.data, "session information")
+        
         })
     }
 
