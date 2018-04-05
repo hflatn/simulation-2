@@ -16,7 +16,9 @@ const initialState = {
     loanAmountString: '',
     monthlyMortgageString: '',
 
-    desiredRentString: null
+    desiredRentString: null,
+
+    cancel: ''
 };
 
 const LOGIN = "LOGIN";
@@ -37,7 +39,7 @@ const MONTHLYMORTGAGE = "MONTHLYMORTGAGE"
 
 const DESIREDRENT = "DESIREDRENT"
 
-
+const CANCEL = "CANCEL"
 
 export default function manager(state = initialState, action) {
     let { payload } = action;
@@ -92,6 +94,13 @@ export default function manager(state = initialState, action) {
             return Object.assign({}, state, {
                 desiredRentString: payload
             })
+
+        case CANCEL: 
+            let newState = Object.assign({}, state);
+            for( var a1 in state) {
+                state = null;
+            }
+            return state;
     }
 
 }
@@ -180,5 +189,12 @@ export function desiredrent(desiredRentString) {
     return {
         type: DESIREDRENT,
         payload: desiredRentString
+    }
+}
+
+export function cancel() {
+    return {
+        type: CANCEL,
+
     }
 }

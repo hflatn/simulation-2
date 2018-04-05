@@ -7,7 +7,7 @@ import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { desiredrent} from '../.././reducer.js';
+import { desiredrent, cancel } from '../.././reducer.js';
 
 class step5 extends Component {
    constructor(props){
@@ -28,7 +28,7 @@ createListing(){
     let body = { nameupdatestring, descriptionupdatestring,  cityString, stateString, 
     zipString, imgUrl, loanAmountString, monthlyMortgageString, desiredRentString }
     axios.post('/api/createListing', body).then ( res => {
-    
+
     })
 }
 //description string, citystring,imgurl,loandamountstrig
@@ -37,7 +37,7 @@ createListing(){
     render(){
 
         const { desiredrent, desiredRentString, nameupdatestring, descriptionupdatestring, addressString, cityString, stateString,
-            zipString, imgUrl, loanAmountString, monthlyMortgageString} = this.props
+            zipString, imgUrl, loanAmountString, monthlyMortgageString, cancel} = this.props
 
         return(
             <div className ="whole-page">
@@ -47,7 +47,7 @@ createListing(){
 
                 <div className = "add-cancel-container">
                     <span className = "add-list-text"> Add new listing </span>
-                    <button className = "cancel-list-button"> Cancel </button>
+                    <Link to="/dashboard">   <button className="cancel-list-button" onClick = {() => cancel()}> Cancel </button> </Link>
                 </div>
 
       <div className = "step-container-title"> 
@@ -95,4 +95,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { desiredrent })(step5);
+export default connect(mapStateToProps, { desiredrent, cancel })(step5);

@@ -41,6 +41,18 @@ module.exports = {
         res.status(200).send(req.session);
     },
 
+    getlisting: (req, res, next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_listing([req.session.user.id])
+            .then((listing) => res.status(200).send(listing))
+            .catch((err) => {
+                (console.log(err,"getlisting error"))
+                res.status(500).send()
+            })
+
+    },
+
     checkForSession: (req, res, next) => {
         const { session } = req;
 

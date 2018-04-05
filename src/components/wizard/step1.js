@@ -6,17 +6,19 @@ import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { nameupdate, descriptionupdate } from '../.././reducer.js';
+import { nameupdate, descriptionupdate, cancel } from '../.././reducer.js';
 
 class step1 extends Component {
+    constructor(props){
+        super(props)
   
+    }
 
     
 
-
     render() {
 
-        const { nameupdate, descriptionupdate, nameupdatestring } = this.props
+        const { nameupdate, descriptionupdate, nameupdatestring, cancel} = this.props
 
 
         console.log(nameupdatestring, "namestring info")
@@ -29,7 +31,7 @@ class step1 extends Component {
 
                     <div className="add-cancel-container">
                         <span className="add-list-text"> Add new listing </span>
-                        <button className="cancel-list-button"> Cancel </button>
+                     <Link to="/dashboard">   <button className="cancel-list-button" onClick = {() => cancel()}> Cancel </button> </Link>
                     </div>
 
                     <div className="step-container-title">
@@ -69,4 +71,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { nameupdate, descriptionupdate, })(step1);
+export default connect(mapStateToProps, { nameupdate, descriptionupdate, cancel })(step1);

@@ -19,6 +19,7 @@
     background-color: #fec2c2;
     cursor: pointer;
     border: none;
+    height: 30px;
 }
 
 .step-container-title {

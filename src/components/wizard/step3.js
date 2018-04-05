@@ -7,7 +7,7 @@ import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
 import header_logo from '../../assets/header_logo.png';
 import { Link } from 'react-router-dom';
-import { img } from '../.././reducer.js';
+import { img, cancel } from '../.././reducer.js';
 
 class step3 extends Component {
     constructor(props){
@@ -21,7 +21,7 @@ class step3 extends Component {
 
     render() {
 
-        const { img, imgUrl } = this.props
+        const { img, imgUrl, cancel} = this.props
 
 
         return (
@@ -32,7 +32,7 @@ class step3 extends Component {
 
                     <div className="add-cancel-container">
                         <span className="add-list-text"> Add new listing </span>
-                        <button className="cancel-list-button"> Cancel </button>
+                        <Link to="/dashboard">  <button className="cancel-list-button" onClick = {() => cancel()}> Cancel </button> </Link>
                     </div>
 
                     <div className="step-container-title">
@@ -88,4 +88,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { img })(step3);
+export default connect(mapStateToProps, { img, cancel })(step3);

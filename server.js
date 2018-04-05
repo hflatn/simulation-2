@@ -29,6 +29,7 @@ massive( process.env.CONNECTION_STRING ).then ( dbInstance =>
 
 app.get('/api/getsession', controller.getSession);
 app.get('/api/signout', controller.signout);
+app.get('/api/getlisting', controller.getlisting);
 app.post('/api/loginuser', controller.login);
 app.post('/api/registeruser', controller.register);
 app.post('api/signout', controller.signout)

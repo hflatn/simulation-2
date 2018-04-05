@@ -6,7 +6,7 @@ import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
-import { addressupdate, cityupdate, stateupdate, zipupdate } from '../.././reducer.js';
+import { addressupdate, cityupdate, stateupdate, zipupdate, cancel } from '../.././reducer.js';
 
 
  class step2 extends Component {
@@ -20,7 +20,7 @@ componentDidMount(){
     render(){
 
         const {addressupdate, cityupdate, stateupdate, zipupdate,
-             addressString, cityString, stateString, zipString} = this.props;
+             addressString, cityString, stateString, zipString, cancel} = this.props;
         
 
 
@@ -32,7 +32,7 @@ componentDidMount(){
 
                     <div className = "add-cancel-container">
                         <span className = "add-list-text"> Add new listing </span>
-                        <button className = "cancel-list-button"> Cancel </button>
+                        <Link to="/dashboard">   <button className="cancel-list-button" onClick = {() => cancel()}> Cancel </button> </Link>
                     </div>
 
                     <div className = "step-container-title"> 
@@ -99,5 +99,5 @@ return { addressString, cityString, stateString, zipString
 }
 }
 
-export default connect( mapStateToProps, { addressupdate, cityupdate, stateupdate, zipupdate } ) (step2);
+export default connect( mapStateToProps, { addressupdate, cityupdate, stateupdate, zipupdate, cancel } ) (step2);
 

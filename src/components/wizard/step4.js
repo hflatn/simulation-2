@@ -6,14 +6,14 @@ import step_active from '../../assets/step_active.png';
 import step_inactive from '../../assets/step_inactive.png';
 import step_completed from '../../assets/step_completed.png';
 import { Link } from 'react-router-dom';
-import { loanamount, monthlymortgage } from '../.././reducer.js';
+import { loanamount, monthlymortgage, cancel } from '../.././reducer.js';
 
  class step4 extends Component {
 
     render(){
 
         const { loanamount, monthlymortgage,
-                loanAmountString, monthlyMortgageString } = this.props
+                loanAmountString, monthlyMortgageString, cancel } = this.props
 
 
         return(
@@ -24,7 +24,7 @@ import { loanamount, monthlymortgage } from '../.././reducer.js';
 
                 <div className = "add-cancel-container">
                     <span className = "add-list-text"> Add new listing </span>
-                    <button className = "cancel-list-button"> Cancel </button>
+                    <Link to="/dashboard">   <button className="cancel-list-button" onClick = {() => cancel()}> Cancel </button> </Link>
                 </div>
 
       <div className = "step-container-title"> 
@@ -73,4 +73,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { loanamount, monthlymortgage})(step4);
+export default connect(mapStateToProps, { loanamount, monthlymortgage, cancel})(step4);
